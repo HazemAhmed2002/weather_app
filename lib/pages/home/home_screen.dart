@@ -309,7 +309,7 @@ class HomeScreen extends GetView<HomeController> {
                                           ),
                                     ),
                                   ),
-                                  MyList(),
+                                  const MyList(),
                                   Container(
                                     padding: const EdgeInsets.only(top: 10),
                                     child: Row(
@@ -334,7 +334,7 @@ class HomeScreen extends GetView<HomeController> {
                                       ],
                                     ),
                                   ),
-                                  MyChart(),
+                                  const MyChart(),
                                 ],
                               ),
                             ),

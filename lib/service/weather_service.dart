@@ -17,7 +17,7 @@ class WeatherService {
   }) {
     final url = '$baseUrl/weather?q=$city&lang=en&$apiKey';
     ApiRepository(
-      url: '$url',
+      url: url,
     ).get(
         beforeSend: () => {
               if (beforSend != null)
@@ -45,7 +45,7 @@ class WeatherService {
     final url = '$baseUrl/forecast?q=$city&lang=en&$apiKey';
     print(url);
     ApiRepository(
-      url: '$url',
+      url: url,
     ).get(
         beforeSend: () => {},
         onSuccess: (data) => {
