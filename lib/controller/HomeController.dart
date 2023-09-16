@@ -48,8 +48,8 @@ class HomeController extends GetxController {
       'gaza',
       'cairo',
       'Kuwait',
-      'ismailia',
-      'fayoum',
+      'London',
+      'jerusalem',
     ];
     for (var c in cities) {
       WeatherService(city: c).getCurrentWeatherData(onSuccess: (data) {
@@ -59,6 +59,7 @@ class HomeController extends GetxController {
       }, onError: (error) {
         print(error);
         update();
+        isLoading = false;
       });
     }
   }
@@ -72,6 +73,7 @@ class HomeController extends GetxController {
     }, onError: (error) {
       print(error);
       update();
+      isLoading = false;
     });
   }
 }

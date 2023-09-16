@@ -24,7 +24,7 @@ class HomeScreen extends GetView<HomeController> {
                 child: Column(
                   children: <Widget>[
                     Container(
-                      padding: const EdgeInsets.only(bottom: 150),
+                      padding: const EdgeInsets.only(bottom: 170),
                       decoration: const BoxDecoration(
                         image: DecorationImage(
                           colorFilter: ColorFilter.mode(
@@ -56,7 +56,10 @@ class HomeScreen extends GetView<HomeController> {
                           ),
                           Container(
                             padding: const EdgeInsets.only(
-                                top: 90, left: 20, right: 20),
+                              top: 105,
+                              left: 20,
+                              right: 20,
+                            ),
                             child: TextField(
                               onChanged: (value) => controller.city = value,
                               style: const TextStyle(
@@ -283,7 +286,7 @@ class HomeScreen extends GetView<HomeController> {
                             horizontal: 15,
                           ),
                           child: Container(
-                            padding: const EdgeInsets.only(top: 100),
+                            padding: const EdgeInsets.only(top: 70),
                             child: Align(
                               alignment: Alignment.topLeft,
                               child: Column(
