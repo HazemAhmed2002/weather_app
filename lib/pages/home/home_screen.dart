@@ -20,15 +20,17 @@ class HomeScreen extends GetView<HomeController> {
                   color: Colors.blue,
                 ),
               )
-            : Column(
-                children: <Widget>[
-                  Expanded(
-                    flex: 1,
-                    child: Container(
+            : SingleChildScrollView(
+                child: Column(
+                  children: <Widget>[
+                    Container(
+                      padding: const EdgeInsets.only(bottom: 150),
                       decoration: const BoxDecoration(
                         image: DecorationImage(
                           colorFilter: ColorFilter.mode(
-                              Colors.black38, BlendMode.darken),
+                            Colors.black38,
+                            BlendMode.darken,
+                          ),
                           image: AssetImage(
                             'assets/images/cloud-in-blue-sky.jpg',
                           ),
@@ -41,23 +43,20 @@ class HomeScreen extends GetView<HomeController> {
                       ),
                       child: Stack(
                         children: <Widget>[
-                          Container(
-                            child: AppBar(
-                              backgroundColor: Colors.transparent,
-                              elevation: 0,
-                              leading: IconButton(
-                                icon: const Icon(
-                                  Icons.menu,
-                                  color: Colors.white,
-                                ),
-                                onPressed: () {},
+                          AppBar(
+                            backgroundColor: Colors.transparent,
+                            elevation: 0,
+                            leading: IconButton(
+                              icon: const Icon(
+                                Icons.menu,
+                                color: Colors.white,
                               ),
+                              onPressed: () {},
                             ),
                           ),
-                          //TODO
                           Container(
                             padding: const EdgeInsets.only(
-                                top: 100, left: 20, right: 20),
+                                top: 90, left: 20, right: 20),
                             child: TextField(
                               onChanged: (value) => controller.city = value,
                               style: const TextStyle(
@@ -93,7 +92,10 @@ class HomeScreen extends GetView<HomeController> {
                           ),
                           Align(
                             alignment: const Alignment(0.0, 1.0),
-                            child: SizedBox(
+                            child: Container(
+                              padding: const EdgeInsets.only(
+                                top: 290,
+                              ),
                               height: 10,
                               width: 10,
                               child: OverflowBox(
@@ -101,14 +103,13 @@ class HomeScreen extends GetView<HomeController> {
                                 maxWidth: MediaQuery.of(context).size.width,
                                 minHeight: 0.0,
                                 maxHeight:
-                                    (MediaQuery.of(context).size.height / 4),
+                                    (MediaQuery.of(context).size.height / 3.9),
                                 child: Stack(
                                   children: <Widget>[
                                     Container(
                                       padding: const EdgeInsets.symmetric(
                                           horizontal: 15),
-                                      width: double.infinity,
-                                      height: double.infinity,
+                                      width: MediaQuery.of(context).size.width,
                                       child: Card(
                                         color: Colors.white,
                                         elevation: 5,
@@ -120,10 +121,9 @@ class HomeScreen extends GetView<HomeController> {
                                           crossAxisAlignment:
                                               CrossAxisAlignment.center,
                                           children: <Widget>[
-                                            //TODO
                                             Container(
                                               padding: const EdgeInsets.only(
-                                                  top: 15, left: 20, right: 20),
+                                                  top: 10, left: 20, right: 20),
                                               child: Column(
                                                 crossAxisAlignment:
                                                     CrossAxisAlignment.start,
@@ -168,7 +168,6 @@ class HomeScreen extends GetView<HomeController> {
                                               ),
                                             ),
                                             const Divider(),
-                                            //TODO
                                             Row(
                                               mainAxisAlignment:
                                                   MainAxisAlignment
@@ -244,25 +243,21 @@ class HomeScreen extends GetView<HomeController> {
                                                             .asset(Images
                                                                 .cloudyAnim),
                                                       ),
-                                                      Container(
-                                                        child: Text(
-                                                          'wind ${controller.currentWeatherData.wind!.speed} m/s',
-                                                          style:
-                                                              Theme.of(context)
-                                                                  .textTheme
-                                                                  .bodySmall!
-                                                                  .copyWith(
-                                                                    color: Colors
-                                                                        .black45,
-                                                                    fontSize:
-                                                                        14,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .bold,
-                                                                    fontFamily:
-                                                                        'flutterfonts',
-                                                                  ),
-                                                        ),
+                                                      Text(
+                                                        'wind ${controller.currentWeatherData.wind!.speed} m/s',
+                                                        style: Theme.of(context)
+                                                            .textTheme
+                                                            .bodySmall!
+                                                            .copyWith(
+                                                              color: Colors
+                                                                  .black45,
+                                                              fontSize: 14,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold,
+                                                              fontFamily:
+                                                                  'flutterfonts',
+                                                            ),
                                                       ),
                                                     ],
                                                   ),
@@ -281,33 +276,30 @@ class HomeScreen extends GetView<HomeController> {
                         ],
                       ),
                     ),
-                  ),
-                  Expanded(
-                    flex: 2,
-                    child: Stack(
+                    Stack(
                       children: <Widget>[
                         Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 15),
+                          padding: const EdgeInsets.symmetric(
+                            horizontal: 15,
+                          ),
                           child: Container(
-                            padding: const EdgeInsets.only(top: 120),
+                            padding: const EdgeInsets.only(top: 100),
                             child: Align(
                               alignment: Alignment.topLeft,
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: <Widget>[
-                                  Container(
-                                    child: Text(
-                                      'other city'.toUpperCase(),
-                                      style: Theme.of(context)
-                                          .textTheme
-                                          .bodySmall!
-                                          .copyWith(
-                                            fontSize: 16,
-                                            fontFamily: 'flutterfonts',
-                                            color: Colors.black45,
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                    ),
+                                  Text(
+                                    'other city'.toUpperCase(),
+                                    style: Theme.of(context)
+                                        .textTheme
+                                        .bodySmall!
+                                        .copyWith(
+                                          fontSize: 16,
+                                          fontFamily: 'flutterfonts',
+                                          color: Colors.black45,
+                                          fontWeight: FontWeight.bold,
+                                        ),
                                   ),
                                   const MyList(),
                                   Container(
@@ -342,8 +334,8 @@ class HomeScreen extends GetView<HomeController> {
                         ),
                       ],
                     ),
-                  ),
-                ],
+                  ],
+                ),
               );
       }),
     );
