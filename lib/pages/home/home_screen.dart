@@ -24,7 +24,9 @@ class HomeScreen extends GetView<HomeController> {
                 child: Column(
                   children: <Widget>[
                     Container(
-                      padding: const EdgeInsets.only(bottom: 170),
+                      padding: const EdgeInsets.only(
+                        bottom: 200,
+                      ),
                       decoration: const BoxDecoration(
                         image: DecorationImage(
                           colorFilter: ColorFilter.mode(
@@ -56,7 +58,7 @@ class HomeScreen extends GetView<HomeController> {
                           ),
                           Container(
                             padding: const EdgeInsets.only(
-                              top: 105,
+                              top: 115,
                               left: 20,
                               right: 20,
                             ),
@@ -97,7 +99,7 @@ class HomeScreen extends GetView<HomeController> {
                             alignment: const Alignment(0.0, 1.0),
                             child: Container(
                               padding: const EdgeInsets.only(
-                                top: 290,
+                                top: 320,
                               ),
                               height: 10,
                               width: 10,
@@ -286,7 +288,7 @@ class HomeScreen extends GetView<HomeController> {
                             horizontal: 15,
                           ),
                           child: Container(
-                            padding: const EdgeInsets.only(top: 70),
+                            padding: const EdgeInsets.only(top: 80),
                             child: Align(
                               alignment: Alignment.topLeft,
                               child: Column(
@@ -303,6 +305,9 @@ class HomeScreen extends GetView<HomeController> {
                                           color: Colors.black45,
                                           fontWeight: FontWeight.bold,
                                         ),
+                                  ),
+                                  const SizedBox(
+                                    height: 10,
                                   ),
                                   const MyList(),
                                   Container(
