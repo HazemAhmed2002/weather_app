@@ -2,8 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 import 'package:lottie/lottie.dart';
-import 'package:weather_app/controller/HomeController.dart';
-
+import 'package:weather_app/controller/home_controller.dart';
 import '../constants/images.dart';
 
 class MyCard extends GetView<HomeController> {
@@ -15,9 +14,7 @@ class MyCard extends GetView<HomeController> {
       decoration: const BoxDecoration(
         image: DecorationImage(
           colorFilter: ColorFilter.mode(Colors.black38, BlendMode.darken),
-          image: AssetImage(
-            'assets/images/cloud-in-blue-sky.jpg',
-          ),
+          image: AssetImage('assets/images/cloud-in-blue-sky.jpg'),
           fit: BoxFit.cover,
         ),
         borderRadius: BorderRadius.only(
@@ -41,7 +38,11 @@ class MyCard extends GetView<HomeController> {
             ),
           ),
           Container(
-            padding: const EdgeInsets.only(top: 100, left: 20, right: 20),
+            padding: const EdgeInsets.only(
+              top: 100,
+              left: 20,
+              right: 20,
+            ),
             child: TextField(
               onChanged: (value) => controller.city = value,
               style: const TextStyle(
@@ -54,19 +55,27 @@ class MyCard extends GetView<HomeController> {
                   Icons.search,
                   color: Colors.white,
                 ),
-                hintStyle: const TextStyle(color: Colors.white),
+                hintStyle: const TextStyle(
+                  color: Colors.white,
+                ),
                 hintText: 'Search'.toUpperCase(),
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
-                  borderSide: const BorderSide(color: Colors.white),
+                  borderSide: const BorderSide(
+                    color: Colors.white,
+                  ),
                 ),
                 focusedBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
-                  borderSide: const BorderSide(color: Colors.white),
+                  borderSide: const BorderSide(
+                    color: Colors.white,
+                  ),
                 ),
                 enabledBorder: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(10),
-                  borderSide: const BorderSide(color: Colors.white),
+                  borderSide: const BorderSide(
+                    color: Colors.white,
+                  ),
                 ),
               ),
             ),
@@ -189,19 +198,17 @@ class MyCard extends GetView<HomeController> {
                                         child: LottieBuilder.asset(
                                             Images.cloudyAnim),
                                       ),
-                                      Container(
-                                        child: Text(
-                                          'wind ${controller.currentWeatherData.wind!.speed} m/s',
-                                          style: Theme.of(context)
-                                              .textTheme
-                                              .bodySmall!
-                                              .copyWith(
-                                                color: Colors.black45,
-                                                fontSize: 14,
-                                                fontWeight: FontWeight.bold,
-                                                fontFamily: 'flutterfonts',
-                                              ),
-                                        ),
+                                      Text(
+                                        'wind ${controller.currentWeatherData.wind!.speed} m/s',
+                                        style: Theme.of(context)
+                                            .textTheme
+                                            .bodySmall!
+                                            .copyWith(
+                                              color: Colors.black45,
+                                              fontSize: 14,
+                                              fontWeight: FontWeight.bold,
+                                              fontFamily: 'flutterfonts',
+                                            ),
                                       ),
                                     ],
                                   ),

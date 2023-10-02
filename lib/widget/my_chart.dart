@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
-import 'package:weather_app/controller/HomeController.dart';
-
+import 'package:weather_app/controller/home_controller.dart';
 import '../model/five_days_data.dart';
 
 class MyChart extends GetView<HomeController> {

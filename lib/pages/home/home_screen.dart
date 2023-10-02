@@ -3,8 +3,8 @@ import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:intl/intl.dart';
 import 'package:lottie/lottie.dart';
 import 'package:weather_app/constants/images.dart';
-import '../../controller/HomeController.dart';
-import '../../widget/myList.dart';
+import '../../controller/home_controller.dart';
+import '../../widget/my_list.dart';
 import '../../widget/my_chart.dart';
 
 class HomeScreen extends GetView<HomeController> {
@@ -75,22 +75,27 @@ class HomeScreen extends GetView<HomeController> {
                                   Icons.search,
                                   color: Colors.white,
                                 ),
-                                hintStyle: const TextStyle(color: Colors.white),
+                                hintStyle: const TextStyle(
+                                  color: Colors.white,
+                                ),
                                 hintText: 'Search'.toUpperCase(),
                                 border: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10),
-                                  borderSide:
-                                      const BorderSide(color: Colors.white),
+                                  borderSide: const BorderSide(
+                                    color: Colors.white,
+                                  ),
                                 ),
                                 focusedBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10),
-                                  borderSide:
-                                      const BorderSide(color: Colors.white),
+                                  borderSide: const BorderSide(
+                                    color: Colors.white,
+                                  ),
                                 ),
                                 enabledBorder: OutlineInputBorder(
                                   borderRadius: BorderRadius.circular(10),
-                                  borderSide:
-                                      const BorderSide(color: Colors.white),
+                                  borderSide: const BorderSide(
+                                    color: Colors.white,
+                                  ),
                                 ),
                               ),
                             ),
@@ -128,7 +133,10 @@ class HomeScreen extends GetView<HomeController> {
                                           children: <Widget>[
                                             Container(
                                               padding: const EdgeInsets.only(
-                                                  top: 10, left: 20, right: 20),
+                                                top: 10,
+                                                left: 20,
+                                                right: 20,
+                                              ),
                                               child: Column(
                                                 crossAxisAlignment:
                                                     CrossAxisAlignment.start,
